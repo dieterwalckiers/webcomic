@@ -1,11 +1,22 @@
-var express = require('express');
+// var express = require('express');
+//
+// var app = express();
+//
+// app.use(express.static(__dirname + '/public'));
+//
+// app.get('/', function(req, res) {
+//     res.sendFile(__dirname + '/index.html');
+// });
+//
+// app.listen(8081);
+var http = require('http');
 
-var app = express();
+var server = http.createServer();
 
-app.use(express.static(__dirname + '/public'));
-
-app.get('/', function(req, res) {
-    res.sendFile(__dirname + '/index.html');
+server.on('request', function(request, response){
+  response.writeHead(200);
+  response.write("Hello, this is dog.");
+  response.end();
 });
 
-app.listen(8081);
+server.listen(8081);
