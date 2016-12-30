@@ -1,22 +1,22 @@
-// var express = require('express');
-//
-// var app = express();
-//
-// app.use(express.static(__dirname + '/public'));
-//
-// app.get('/', function(req, res) {
-//     res.sendFile(__dirname + '/index.html');
-// });
-//
-// app.listen(8081);
-var http = require('http');
+var express = require('express');
 
-var server = http.createServer();
+var app = express();
 
-server.on('request', function(request, response){
-  response.writeHead(200);
-  response.write("Hello, this is dog.");
-  response.end();
+app.use(express.static(__dirname + '/public'));
+
+app.get('/', function(req, res) {
+    res.sendFile(__dirname + '/index.html');
 });
 
-server.listen(8081);
+app.listen(8081);
+// var http = require('http');
+//
+// var server = http.createServer();
+//
+// server.on('request', function(request, response){
+//   response.writeHead(200);
+//   response.write("Hello, this is dog.");
+//   response.end();
+// });
+//
+// server.listen(8081);
