@@ -6,7 +6,8 @@ app.use('/static_verkrijt', express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {
     //res.sendFile(__dirname + '/public/index.html');
-    res.sendFile(path.join(__dirname, '../public', 'index.html'));
+    //res.sendFile(path.join(__dirname, '../public', 'index.html'));
+    res.sendFile('public/index.html' , { root : __dirname});
 });
 
 app.listen(8081);
