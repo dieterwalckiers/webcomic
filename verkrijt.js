@@ -1,8 +1,11 @@
-var http = require('http');
+var express = require('express');
 
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Verkrijt webcomic. Welcome.\n');
-}).listen(8081, 'localhost');
+var app = express();
 
-console.log('Webcomic running at http://localhost:8081/');
+app.use(express.static(__dirname + '/public'));
+
+app.get('/', function(req, res) {
+    res.sendFile(__dirname + '/index.html');
+});
+
+app.listen(8080);
